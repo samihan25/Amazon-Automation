@@ -30,17 +30,66 @@ time.sleep(6)
 
 elem = browser.find_element_by_id('twotabsearchtextbox')  # Find the search box
 elem.send_keys('Agnipankh' + Keys.ENTER)
-time.sleep(2)
+time.sleep(10)
 
 elem = browser.find_element_by_link_text('Agnipankh')
 elem.click()
+time.sleep(10)
+
+#Switch Browser Tab
+#browser.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.TAB)
+
+#windows = browser.window_handles
+
+#time.sleep(3)
+#browser.switch_to.window(windows[1])
+
+browser.switch_to.window(browser.window_handles[1])
+#elem = browser.find_element_by_tag_name('body')
+#elem.send_keys(Keys.CONTROL + Keys.TAB)
+time.sleep(5)
+
+elem = browser.find_element_by_id('add-to-wishlist-button-submit')  # add to wishlist
+elem.click()
+time.sleep(10)
+
+elem = browser.find_element_by_link_text('View Wish List') # view wishlist
+elem.click()
+time.sleep(10)
+
+elem = browser.find_element_by_link_text('Add to Cart') # Add to cart
+elem.click()
+time.sleep(10)
+
+elem = browser.find_element_by_link_text('Proceed to checkout') # proceed to buy
+elem.click()
+time.sleep(10)
+
+elem = browser.find_element_by_link_text('Deliver to this address') # Deliver to this address
+elem.click()
+time.sleep(10)
+
+elem = browser.find_element_by_xpath('/html/body/div[5]/div[1]/div/div[2]/div/div[1]/form/div[1]/div[2]/div/span[1]/span/input') # Continue
+elem.click()
+time.sleep(10)
+
+elem = browser.find_element_by_id('pp-W1vSIe-139') # Select Pay on Delivery
+elem.click()
 time.sleep(2)
 
-elem = browser.find_element_by_id('buy-now-button')  # buy now
+elem = browser.find_element_by_link_text('Continue') # Continue
+elem.click()
+time.sleep(2)
+
+elem = browser.find_element_by_link_text('Place your order') # Place your order
 elem.click()
 time.sleep(2)
 
 '''
+elem = browser.find_element_by_id('buy-now-button')  # buy now
+elem.click()
+time.sleep(2)
+
 elem = browser.find_element_by_partial_link_text('Account & Lists') # Open your account
 hover = ActionChains(browser).move_to_element(elem)
 hover.perform()
